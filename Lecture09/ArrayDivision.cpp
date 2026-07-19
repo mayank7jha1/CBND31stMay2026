@@ -26,6 +26,7 @@ int main() {
 
   sum /= 2;
 
+  // This is for prefix :
   int pre[n];
   pre[0] = a[0];
   for (int i = 1; i < n; i++) {
@@ -47,6 +48,29 @@ int main() {
 
     if (MissingElement > 0) {
       if (freq[MissingElement] > 0) {
+        cout << "Yes" << endl;
+        return 0;
+      }
+    }
+  }
+
+  // This is for Suffix :
+  int suffix[n]{};
+  suffix[n - 1] = a[n - 1];
+  for (int i = n - 1; i >= 0; i--) {
+    suffix[i] = suffix[i + 1] + a[i];
+  }
+
+  int freq1[maxi + 1]{};
+
+  for (int i = n - 1; i >= 0; i--) {
+    int OriginalElement = a[i];
+    freq1[OriginalElement]++;
+
+    int MissingElement = suffix[i] - sum;
+    
+    if (MissingElement > 0) {
+      if (freq1[MissingElement] > 0) {
         cout << "Yes" << endl;
         return 0;
       }

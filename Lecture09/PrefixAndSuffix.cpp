@@ -3,6 +3,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+ * pre[i]    : Sum of the subarray from 0th index till ith index.
+ * suffix[i] : Sum of the subarray from ith index till n-1th index.
+ */
+
 int main() {
   int n;
   cin >> n;
@@ -38,7 +43,7 @@ int main() {
   cout << endl << "------------------------------------" << endl;
 
   // Fetch Query:
-  //  Sum[2,4] : 
+  //  Sum[2,4] :
   cout << pre[4] - pre[1] << endl;
   // Multiply[2,4] :
   cout << pre1[4] / pre1[1] << endl;
