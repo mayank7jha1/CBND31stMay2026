@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <climits>
 #include <cstring>
 #include <iostream>
@@ -80,6 +81,13 @@ int main() {
 
   // Frequency of key in log(n) time.
   cout << UpperBound(a, n) - LowerBound(a, n) << endl;
+
+  // C++ Inbuilt Lower Bound function gives you the address of the element.
+  cout << lower_bound(a, a + n, key) - a << endl;
+  cout << upper_bound(a, a + n, key) - a << endl;
+
+  // This function only gives you true/false.
+  cout << binary_search(a, a + n, key) << endl;
 
   return 0;
 }
