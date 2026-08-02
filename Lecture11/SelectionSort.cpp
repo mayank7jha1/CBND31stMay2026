@@ -12,6 +12,10 @@ int main() {
   }
 
   // Computations : ~(n*n)
+  // No matter what the array is selection sort is computing in n^2
+  // computations.
+  // Relative position of the elements maintain karna padhta hain un situation
+  // me aap selection sort prefer karte ho.
   //  Selection Sort: Find minimum n-1 times and put it at its correct position.
   for (int i = 0; i < n - 1; i++) {
     // Current Range : [i,n-1]:

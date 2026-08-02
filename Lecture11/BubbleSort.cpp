@@ -30,16 +30,36 @@ int main() {
   // }
   //
 
-  // Computations : ~(n*n)
-  //  Bubble Sort: Find maximum n-1 times and put it at its correct position.
+  // // Computations : ~(n*n)
+  // //  Bubble Sort: Find maximum n-1 times and put it at its correct position.
+  // for (int i = 0; i < n - 1; i++) {
+  //   // Current Range : [0,n-i-1] : Find the maximum in the current range and
+  //   put
+  //   // the maximum at the end of the range.
+
+  //   for (int j = 0; j < n - i - 1; j++) {
+  //     if (a[j] > a[j + 1]) {
+  //       swap(a[j], a[j + 1]);
+  //     }
+  //   }
+  // }
+
+  // Computations : Worst Case : ~n*n
+  //  Average case or Best Case : It will tend towards ~n Solution.
   for (int i = 0; i < n - 1; i++) {
     // Current Range : [0,n-i-1] : Find the maximum in the current range and put
     // the maximum at the end of the range.
+    int flag = 0;
 
     for (int j = 0; j < n - i - 1; j++) {
       if (a[j] > a[j + 1]) {
+        flag = 1;
         swap(a[j], a[j + 1]);
       }
+    }
+
+    if (flag == 0) {
+      break;
     }
   }
 

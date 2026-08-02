@@ -15,7 +15,7 @@ int main() {
   // Implementation Idea: Maintain two halfs of sorted and unsorted region and
   // move elements from unsorted region to sorted one.
   //
-  // Computations : ~(n*n)
+  // Computations : Worst Case :  ~(n*n)
 
   // Move all the elements i from unsorted to sorted half.
   for (int i = 1; i < n; i++) {
