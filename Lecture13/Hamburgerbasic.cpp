@@ -41,6 +41,7 @@ int32_t main() {
 
   // jab tak mere paise khatam nahi hojaata tab tak hamburger banane ki
   //  koshish karte raho.
+  // Computations :10^12+100;
 
   while (r > 0) {
 
