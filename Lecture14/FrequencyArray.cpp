@@ -4,6 +4,9 @@
 using namespace std;
 
 int main() {
+
+  string m{"Rahul"}; // Direct List Initialisation
+
   string s;
   getline(cin, s);
   cout << s << endl;
