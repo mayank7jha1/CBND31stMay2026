@@ -73,13 +73,13 @@ int main() {
   auto it = v5.begin();
   auto pq = v5.end();
 
-  for (auto x = v5.begin(); x != v5.end(); x++) {
+  for (vector<int>::iterator x = v5.begin(); x != v5.end(); x++) {
     cout << (*x) << " ";
   }
 
   cout << endl << "-------------------------------" << endl;
 
-  vector<int> ans = F(vector<int> v5);
+  vector<int> ans = F(v5);
 
   return 0;
 }
