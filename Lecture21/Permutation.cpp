@@ -22,6 +22,16 @@ void F(int x) {
 
     // Next State:
     F(x + 1);
+
+    // Current State:F(x) : I now have complete the State F(x+1) and I am again
+    // at State F(x).
+
+    // Now I will be returning to the previous state from this F(x).
+    // JO kaam tumne F(x) se F(x+1) tak jaane me kiya tha uska opposite work
+    // kardo.
+
+    // Backtracking:
+    swap(in[x], in[y]);
   }
 
   return;
@@ -44,6 +54,7 @@ void F1(int x) {
 
     // Next State:
     F1(x + 1);
+    swap(s[x], s[y]);
   }
 
   return;
@@ -88,6 +99,8 @@ void F3(string &s, int x) {
 
     // Next State:
     F3(s, x + 1);
+
+    swap(s[x], s[y]);
   }
 
   return;
