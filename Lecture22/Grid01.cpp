@@ -23,19 +23,19 @@ int F(int x, int y) {
 
   // First I am going up:
   if (x - 1 >= 1) {
-    Op1 = F(x - 1, y);
+    Op1 = F(x - 1, y) % mod;
   }
 
   // Second I am going Left:
   if (y - 1 >= 1) {
-    Op2 = F(x, y - 1);
+    Op2 = F(x, y - 1) % mod;
   }
 
   // Current State : F(x,y):
 
-  int ans = Op1 + Op2;
+  int ans = (Op1 % mod + Op2 % mod) % mod;
 
-  return ans;
+  return (ans % mod);
 }
 
 int main() {
@@ -52,3 +52,7 @@ int main() {
 
   return 0;
 }
+
+
+
+
