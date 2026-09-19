@@ -22,8 +22,8 @@ bool F(int x, int y) {
       }
       cout << endl;
     }
-
-    return 1;
+    cout << endl;
+    return false;
   }
 
   // Current State : F(x,y):
@@ -59,6 +59,7 @@ bool F(int x, int y) {
 
   // Backtracking:
   solution[x][y] = 0;
+  visited[x][y] = 0;
 
   return false; // I have no way to reach n,m from this x,y box.
 }
