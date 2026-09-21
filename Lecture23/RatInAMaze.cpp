@@ -1,8 +1,10 @@
+#include <algorithm>
 #include <climits>
 #include <cstring>
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 int n;
@@ -79,7 +81,15 @@ int main() {
   // Find all the paths from 1,1 to n,m:
   F(1, 1);
 
-  
+  // This Below will sort all path vector.
+  sort(AllPaths.begin(), AllPaths.end());
+
+  // THis below will sort inidivial string at index 2.
+  //  sort(AllPaths[2].begin(), AllPaths[2].end());
+
+  for (int i = 0; i < AllPaths.size(); i++) {
+    cout << AllPaths[i] << " ";
+  }
 
   return 0;
 }

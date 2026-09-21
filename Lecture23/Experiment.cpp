@@ -1,5 +1,7 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 // Multidimensional Arrays:
@@ -38,6 +40,8 @@ int main() {
   vector<int> c[10]; // Every bucket of this array is a vector.
   // c[i] : vector.
 
+  sort(c, c + 10);
+
   // Rows are fixed but columns are not, vector can of variable size.
   vector<int> c1[10];
   vector<int> c2[10]{};
@@ -65,6 +69,9 @@ int main() {
   //
   // Har ek element of this vector is also a vector.
   vector<vector<int>> v;
+
+  sort(v.begin(), v.end());
+  sort(v[2].begin(), v[2].end());
 
   // This is a vector of vector have number of rows as 10.
   vector<vector<int>> v1(10);
@@ -124,13 +131,11 @@ int main() {
   }
 
   for (int i = 0; 10; i++) {
-      
+
     for (int j = 0; j < 10; j++) {
       char ch;
       cin >> ch;
       z[i].push_back(ch);
     }
-
-    
   }
 }
