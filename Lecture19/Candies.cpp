@@ -6,15 +6,17 @@ using namespace std;
 #define int long long
 const int N = 1e5 + 2;
 int a[N]{};
+int dp[101][N]{};
 
 // F(n,k) : Number of ways to distribue k candies amound n children.
 
-//_ _ _ _ _ _ _ _ _ _ : Computations : Number of States * Transition Time :
+//_ _ _ _ _ _ _ _ _ _ : Computations : Number of Unique States * Transition Time
+//:
 // (a[1]*a[2]*a[3]_ _ _ _ _ _ _ )*k
-// (10^500*10^5)
+// (101*100001)*10^5
+//
 
 int F(int n, int k) {
-
   // Stopping Point:
   if (n == 1) {
     if (k <= a[1]) {
@@ -25,6 +27,10 @@ int F(int n, int k) {
   }
 
   // Current State: F(n,k):
+  if (dp[n][k] != -1) {
+    return dp[n][k];
+  }
+
   int MaximumCandyICanHave = min(k, a[n]);
 
   // This answer variable will store the current state ka answer:
@@ -35,7 +41,7 @@ int F(int n, int k) {
   }
 
   // Current State: F(n,k): Iska answer ab mere pass hain:
-  return ans;
+  return (dp[n][k] = ans);
 }
 
 int32_t main() {
@@ -44,6 +50,8 @@ int32_t main() {
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
   }
+
+  memset(dp, -1, sizeof(dp));
 
   // Recursion from back:
   //  Starting Point:
