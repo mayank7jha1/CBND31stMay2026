@@ -1,6 +1,7 @@
 #include "ListNode.h"
 #include <iostream>
 
+
 template <typename T> void InsertAtHead(ListNode<T> *&h, T data) {
   ListNode<T> *newNode = new ListNode<T>(data);
   newNode->next = h;
@@ -202,18 +203,20 @@ template <typename T> ListNode<T> *MidPoint3(ListNode<T> *head) {
   }
 
   return slow;
-}
+} 
 
 template <typename T> void ReverseLLIteratively(ListNode<T> *&head) {
   ListNode<T> *current = head;
   ListNode<T> *prev = nullptr;
   ListNode<T> *n = nullptr;
+  
   while (current != nullptr) {
     n = current->next;
     current->next = prev;
     prev = current;
     current = n;
   }
+  
   head = prev;
 }
 

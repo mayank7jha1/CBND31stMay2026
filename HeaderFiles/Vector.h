@@ -67,5 +67,13 @@ public:
     return;
   }
 
+  bool empty() {
+    if (cs == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   T operator[](int index) { return a[index]; }
 };
